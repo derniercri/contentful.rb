@@ -153,9 +153,9 @@ module Contentful
     # @param [Hash] query
     #
     # @return [Contentful::Array<Contentful::Entry>]
-    def entries(query = {})
+    def entries(query = {}, build_resource: true)
       normalize_select!(query)
-      Request.new(self, '/entries', query).get
+      Request.new(self, '/entries', query).get(build_resource)
     end
 
     # Gets a specific asset

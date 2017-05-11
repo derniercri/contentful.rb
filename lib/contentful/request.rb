@@ -26,8 +26,8 @@ module Contentful
     end
 
     # Delegates the actual HTTP work to the client
-    def get
-      client.get(self)
+    def get(build_resource = true)
+      client.get(self, build_resource)
     end
 
     # Returns true if endpoint is an absolute url
